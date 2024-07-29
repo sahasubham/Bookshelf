@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Fragment.BookListFragment">
+
+
+   <LinearLayout
+       android:id="@+id/header"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_margin="@dimen/_6sdp"
+       android:orientation="horizontal"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintBottom_toTopOf="@id/bookList">
+
+      <TextView
+          android:id="@+id/heading"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="match_parent"
+          android:fontFamily="@font/poppins_bold"
+          android:gravity="start|center"
+          android:paddingStart="@dimen/_2sdp"
+          android:paddingEnd="@dimen/_2sdp"
+          android:text="@string/bookList"
+          android:textColor="@color/black"
+          android:textSize="@dimen/_16sdp"
+          tools:layout_editor_absoluteX="9dp"
+          tools:layout_editor_absoluteY="10dp" />
+
+      <RelativeLayout
+          android:layout_width="@dimen/_30sdp"
+          android:layout_height="@dimen/_30sdp"
+          android:layout_marginEnd="@dimen/_10sdp"
+          android:gravity="center"
+          android:layout_gravity="center"
+          android:id="@+id/addEdit"
+          android:background="@drawable/add_ico_bg"
+          android:layout_toEndOf="@+id/heading">
+
+         <ImageView
+             android:layout_width="@dimen/_24sdp"
+             android:layout_height="@dimen/_24sdp"
+             android:src="@drawable/add_book"
+             android:id="@+id/add_ico"/>
+
+
+
+      </RelativeLayout>
+
+   </LinearLayout>
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/bookList"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:layout_below="@+id/header"
+       android:layout_margin="@dimen/_8sdp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/header"
+       app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+   <RelativeLayout
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/header"
+       app:layout_constraintBottom_toBottomOf="parent"
+       android:layout_centerInParent="true"
+       android:gravity="center"
+       android:id="@+id/noDataLayout">
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bookshelf_empty"
+                android:id="@+id/no_data_icon"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/no_data_icon"
+                android:text="@string/no_book_found"
+                android:textSize="@dimen/_14sdp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/noDataLineOne"
+                android:textColor="@color/no_data"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/it_seems_no_book_to_display"
+                android:layout_below="@+id/noDataLineOne"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/no_data"/>
+
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/progressLayout">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/dataLoading"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/hint_color"/>
+
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

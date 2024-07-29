@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bookListFragment">
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="saha.subham.bookshelf.Fragment.BookListFragment"
+        android:label="fragment_book_list"
+        tools:layout="@layout/fragment_book_list" >
+        <action
+            android:id="@+id/action_bookListFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
+        <action
+            android:id="@+id/action_bookListFragment_to_addEditBookFragment"
+            app:destination="@id/addEditBookFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="saha.subham.bookshelf.Fragment.BookDetailFragment"
+        android:label="fragment_book_detail"
+        tools:layout="@layout/fragment_book_detail">
+        <action
+            android:id="@+id/action_bookDetailFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
+
+        <argument
+            android:name="bookId"
+            app:argType="string" />
+        <deepLink
+            android:id="@+id/deepLink2"
+            android:autoVerify="true"
+            app:uri="stephen-king-api.onrender.com/api/book/{bookId}" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditBookFragment"
+        android:name="saha.subham.bookshelf.Fragment.AddEditBookFragment"
+        android:label="fragment_add_edit_book"
+        tools:layout="@layout/fragment_add_edit_book" >
+        <action
+            android:id="@+id/action_addEditBookFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"
+            app:popEnterAnim="@anim/pop_enter_anim"
+            app:popExitAnim="@anim/pop_exit_anim"/>
+    </fragment>
+</navigation>

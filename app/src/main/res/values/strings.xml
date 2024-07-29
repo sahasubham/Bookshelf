@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">BookShelf</string>
+    <string name="book_name">Book Name</string>
+    <string name="publisher_name">Publisher Name</string>
+    <string name="publish_year">Year : </string>
+    <string name="bookList">BookList</string>
+    <string name="currentYear">2024</string>
+    <string name="bookDetails">BookDetails</string>
+    <string name="addBooks">Add Books</string>
+    <string name="editBooks">Edit Books</string>
+    <string name="title">Enter Title</string>
+    <string name="author">Enter Author Name</string>
+    <string name="description">Enter Description</string>
+    <string name="add_book">Add Book</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="are_you_sure">Are you Sure?</string>
+    <string name="confirm_phase_one">Are you sure you want to delete the Book named</string>
+    <string name="confirm_phase_two">This action cannot be undone.</string>
+    <string name="no_book_found">No Book(s) Found</string>
+    <string name="it_seems_no_book_to_display">It seems no book(s) to display</string>
+</resources>
